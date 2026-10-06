@@ -1,7 +1,18 @@
 const FALLBACK_SITE_URL = "http://localhost:3000";
 
-/** Public origin of the site, without a trailing slash. Set `SITE_URL` in production. */
-export const SITE_URL = (process.env.SITE_URL ?? FALLBACK_SITE_URL).replace(/\/+$/, "");
+/** Railway sets this (e.g. "portfolio-production.up.railway.app") once a domain is generated. */
+const RAILWAY_URL = process.env.RAILWAY_PUBLIC_DOMAIN
+  ? `https://${process.env.RAILWAY_PUBLIC_DOMAIN}`
+  : undefined;
+
+/**
+ * Public origin of the site, without a trailing slash.
+ * Order: `SITE_URL` (e.g. a custom domain) → Railway's domain → localhost.
+ */
+export const SITE_URL = (process.env.SITE_URL || RAILWAY_URL || FALLBACK_SITE_URL).replace(
+  /\/+$/,
+  "",
+);
 
 export const MAIN_CONTENT_ID = "main-content";
 

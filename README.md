@@ -76,7 +76,7 @@ Everything is a Server Component except `MobileNav` (menu toggle) and `Reveal` (
 1. Push this repo to GitHub.
 2. In [Railway](https://railway.com), choose **New Project → Deploy from GitHub repo** and pick the repo. Railway detects Next.js and runs `npm run build` and `npm start` automatically.
 3. Under the service's **Settings → Networking**, click **Generate Domain** (or add a custom domain).
-4. Under **Variables**, add `SITE_URL` with that domain, e.g. `https://your-app.up.railway.app` (no trailing slash). It's read at build time, so **redeploy** after setting or changing it.
+4. `SITE_URL` is optional on Railway: the site uses Railway's generated domain (`RAILWAY_PUBLIC_DOMAIN`) automatically. Set `SITE_URL` (with `https://`, no trailing slash) only for a custom domain, then **redeploy**, since it's read at build time.
 5. Every push to the default branch redeploys automatically.
 
 Once it's live, check the share card with an Open Graph debugger and `https://<your-domain>/sitemap.xml`.
