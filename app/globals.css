@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-/* Theme tokens. Dark values follow the system preference. All text pairs meet WCAG AA. */
 :root {
   color-scheme: light dark;
   --background: #fafaf9;
@@ -66,7 +65,6 @@
   }
 }
 
-/* Scroll reveals are skipped entirely for reduced-motion users. */
 @media (prefers-reduced-motion: reduce) {
   [data-reveal] {
     opacity: 1 !important;
@@ -74,7 +72,6 @@
   }
 }
 
-/* Soft accent glow over a faded dot grid behind the hero. */
 .hero-backdrop {
   background-image:
     radial-gradient(60rem 30rem at 15% -10%, var(--glow), transparent 70%),

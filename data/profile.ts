@@ -2,7 +2,6 @@ import type { Profile } from "@/types/profile";
 
 /**
  * Single source of truth for all site content.
- * Search this file for "TODO" to find placeholders that still need real info.
  */
 export const profile: Profile = {
   person: {
@@ -122,7 +121,6 @@ export const profile: Profile = {
       { name: "TypeScript", icon: "typescript" },
       { name: "Laravel REST API", icon: "laravel" },
     ],
-    // Set to "" to hide the Play Store button.
     playStoreUrl:
       "https://play.google.com/store/apps/details?id=com.kheldiente.quinnlaundryapp",
     playStoreLabel: "Quinns POS on Google Play",
@@ -140,8 +138,6 @@ export const profile: Profile = {
     ],
   },
 
-  // Anonymized: no patient data, client names, screenshots, or proprietary details.
-  // Fill in the TODOs below from your own memory. Don't add anything covered by an NDA.
   otherCaseStudies: [
     {
       eyebrow: "Healthcare case study",
@@ -155,18 +151,14 @@ export const profile: Profile = {
         { name: "PHP", icon: "php" },
         { name: "RESTful APIs", icon: "api" },
       ],
-      // TODO: name what made the old app hard to work with (e.g. its old framework, slow pages, tangled code).
       problem:
         "The EHR's legacy application had become hard to maintain and slow to load, but clinicians across Hawaii relied on it every day, and it had to stay certified to U.S. healthcare software standards throughout any change.",
       solution: [
         "Built core EHR modules as an Application Developer, then designed RESTful APIs that let third-party partners securely access and exchange patient healthcare data.",
-        // TODO: say how the migration ran (all at once, or module by module while the old app stayed live).
         "As Technical Lead, directed the rebuild of the legacy application as a single-page app with a Vue.js frontend and a Laravel backend.",
         "Led a 6-person team through Agile adoption, setting up sprint rituals, task breakdown, and status reporting.",
         "Partnered directly with the CEO to keep the software certified to U.S. healthcare standards, and reviewed code and mentored developers across the team.",
       ],
-      // The new SPA was still in development when Julius left (Aug 2021), so impact describes progress, not production results.
-      // TODO: say how far the rebuild got (e.g. "core scheduling and charting modules rebuilt and in QA").
       impact: [
         "Moved the team onto a modern Vue.js + Laravel architecture built for easier maintenance and faster page loads. The new app was still in development when I left in August 2021.",
         "Third-party partners could exchange patient data with the EHR through secure REST APIs.",
@@ -174,8 +166,6 @@ export const profile: Profile = {
     },
   ],
 
-  // Public client sites built or supported while employed at TaoCrowd.
-  // TODO: confirm with TaoCrowd that listing these clients is OK, and refine each role/summary.
   clientWork: [
     {
       client: "Jingxing Paper (JXPaper)",
@@ -222,7 +212,6 @@ export const profile: Profile = {
     {
       role: "Full-Stack Engineer",
       company: "TaoCrowd Inc. (formerly August99)",
-      // TODO (optional): add companyUrl for TaoCrowd.
       start: "Aug 2021",
       end: "Present",
       highlights: [

@@ -1,7 +1,6 @@
 import { ImageResponse } from "next/og";
 import { profile } from "@/data/profile";
 
-// Matches the light theme accent in globals.css; reads well on light and dark browser tabs.
 const MONOGRAM_COLORS = {
   background: "#0f766e",
   foreground: "#ffffff",

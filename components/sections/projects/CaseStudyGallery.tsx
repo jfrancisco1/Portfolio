@@ -8,7 +8,6 @@ interface CaseStudyGalleryProps {
 
 const GALLERY_SIZES = "(min-width: 1152px) 520px, (min-width: 640px) 50vw, 100vw";
 
-/** Grid of product screens. Images whose files are missing are skipped. */
 export function CaseStudyGallery({ images }: CaseStudyGalleryProps) {
   const available = images.filter((image) => publicAssetExists(image.src));
   if (available.length === 0) return null;
