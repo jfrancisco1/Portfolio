@@ -1,18 +1,20 @@
 const FALLBACK_SITE_URL = "http://localhost:3000";
 
-/** Railway sets this (e.g. "portfolio-production.up.railway.app") once a domain is generated. */
-const RAILWAY_URL = process.env.RAILWAY_PUBLIC_DOMAIN
-  ? `https://${process.env.RAILWAY_PUBLIC_DOMAIN}`
-  : undefined;
+/** Accepts "example.com" or "https://example.com/" and returns "https://example.com". */
+function toOrigin(value: string): string {
+  const trimmed = value.trim().replace(/\/+$/, "");
+  return /^https?:\/\//.test(trimmed) ? trimmed : `https://${trimmed}`;
+}
 
 /**
  * Public origin of the site, without a trailing slash.
- * Order: `SITE_URL` (e.g. a custom domain) → Railway's domain → localhost.
+ * Order: `SITE_URL` (e.g. a custom domain) → Railway's generated domain → localhost.
  */
-export const SITE_URL = (process.env.SITE_URL || RAILWAY_URL || FALLBACK_SITE_URL).replace(
-  /\/+$/,
-  "",
-);
+export const SITE_URL = process.env.SITE_URL?.trim()
+  ? toOrigin(process.env.SITE_URL)
+  : process.env.RAILWAY_PUBLIC_DOMAIN?.trim()
+    ? toOrigin(process.env.RAILWAY_PUBLIC_DOMAIN)
+    : FALLBACK_SITE_URL;
 
 export const MAIN_CONTENT_ID = "main-content";
 
