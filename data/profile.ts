@@ -51,7 +51,7 @@ export const profile: Profile = {
 
   caseStudy: {
     eyebrow: "Featured case study",
-    title: "Quinns Business Suite",
+    title: "Quinns Laundry POS",
     role: "Founder & Lead Developer · Personal project",
     tagline:
       "Three connected React Native apps that run day-to-day operations for a self-owned laundry business.",
